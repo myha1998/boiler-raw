@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boiler Service - Porter Boiler Service</title>
+    <title>Area We Serve - Porter Boiler Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
@@ -28,6 +28,8 @@
     <style>
         body { font-family: 'Open Sans', sans-serif; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        .slider-container { scrollbar-width: none; }
+        .slider-container::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -40,23 +42,23 @@
                     <span class="text-2xl font-bold text-primary">Porter Boiler Service</span>
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">Home</a>
                     <div class="relative group">
-                        <button class="text-gray-700 hover:text-primary font-medium py-2">BOILER SERVICES</button>
+                        <button class="text-gray-700 hover:text-primary font-medium py-2 cursor-pointer">BOILER SERVICES</button>
                         <div class="absolute left-0 mt-0 w-56 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary">Boiler Service</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary">Boiler Maintenance & Repair</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary">Boiler Installation</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary">Combustion Emissions & Burners</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary">Refractory Insulation</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary">R-Stamp Certified Welding</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary">Boiler Venting & Exhaust</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Boiler Service</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Boiler Maintenance & Repair</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Boiler Installation</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Combustion Emissions & Burners</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Refractory Insulation</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">R-Stamp Certified Welding</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Boiler Venting & Exhaust</a>
                         </div>
                     </div>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium">BOILER MAINTENANCE & REPAIR</a>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium">BOILER EQUIPMENT</a>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium">PROCESS PIPING</a>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium">Contact Us</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">BOILER MAINTENANCE & REPAIR</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">BOILER EQUIPMENT</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">PROCESS PIPING</a>
+                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">Contact Us</a>
                 </div>
                 <div class="flex items-center space-x-4">
                     <span class="text-primary font-semibold">(800) 426-2264</span>
@@ -68,230 +70,287 @@
 
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-r from-secondary to-gray-800 text-white py-20">
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80" alt="Southern California industrial" class="w-full h-full object-cover opacity-20">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Serving All of Southern California</h1>
+                <p class="text-lg text-gray-200 max-w-3xl mx-auto mb-8">Porter Boiler Service proudly serves commercial and residential clients throughout Southern California. With our central location in Signal Hill, we can quickly respond to emergency calls across the region.</p>
+                <a href="#locations" class="inline-block bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-primary-light transition duration-200 cursor-pointer">View Service Areas ></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Slider -->
+    <section id="locations" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-secondary mb-4">Cities We Serve</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Click on any city to learn more about our services in that area</p>
+            </div>
+
+            <!-- Slider -->
+            <div class="relative">
+                <div class="flex overflow-x-auto gap-6 pb-4 slider-container" id="locationSlider">
+                    <!-- Los Angeles -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=600&q=80" alt="Los Angeles" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Los Angeles</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Santa Clarita -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1565008447742-97f4f97cff34?w=600&q=80" alt="Santa Clarita" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Santa Clarita</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pasadena -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1534234828563-0253171e29a8?w=600&q=80" alt="Pasadena" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Pasadena</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Santa Monica -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80" alt="Santa Monica" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Santa Monica</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ventura -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1559595500-9c6d8f86e86e?w=600&q=80" alt="Ventura" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Ventura</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Oxnard -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=600&q=80" alt="Oxnard" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Oxnard</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thousand Oaks -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?w=600&q=80" alt="Thousand Oaks" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Thousand Oaks</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Irvine -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1596422846543-75c0a6f2c26d?w=600&q=80" alt="Irvine" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Irvine</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Murrieta -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Murrieta" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Murrieta</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Temecula -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="Temecula" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Temecula</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- San Bernardino National Forest -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80" alt="San Bernardino National Forest" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">San Bernardino NF</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Angeles National Forest -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80" alt="Angeles National Forest" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Angeles National Forest</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Channel Islands National Park -->
+                    <div class="flex-shrink-0 w-72 cursor-pointer group">
+                        <div class="relative h-48 rounded-xl overflow-hidden mb-3">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80" alt="Channel Islands National Park" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-bold">Channel Islands</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Navigation -->
+                <button onclick="document.getElementById('locationSlider').scrollBy({left: -300, behavior: 'smooth'})" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100 transition duration-200 cursor-pointer z-10">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button onclick="document.getElementById('locationSlider').scrollBy({left: 300, behavior: 'smooth'})" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-gray-100 transition duration-200 cursor-pointer z-10">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Is Your City Listed? ></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Coverage Map -->
+    <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Boiler Service</h1>
-                    <p class="text-lg text-gray-200 mb-8">Service is the most important word in our company name. Founded in 1958, Porter Boiler Service understands the urgency of your boiler issues, which is why our boiler technicians are available 24/7 to address any boiler emergencies. We handle every service call with integrity, whether it's a quick fix or extensive overnight repairs. We provide long-term solutions that prioritize your boiler's performance and safety. We believe in competitive pricing and transparency at Porter Boiler Service, ensuring that our clients are fully informed about the costs involved and the options available to manage expenses. Our goal is to provide exceptional value without compromising on quality or safety. Give us a call today so we can get you back up and running.</p>
-                    <a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-primary-light transition duration-200 cursor-pointer">Request Service ></a>
+                    <h2 class="text-3xl font-bold text-secondary mb-4">Our Service Region</h2>
+                    <p class="text-gray-600 mb-6">Porter Boiler Service provides complete boiler solutions throughout Southern California. Our central location in Signal Hill allows us to serve major population centers within hours, with 24/7 emergency availability across all service areas.</p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center text-gray-700 cursor-pointer hover:text-primary transition duration-200">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span>Same-Day Service Available</span>
+                        </div>
+                        <div class="flex items-center text-gray-700 cursor-pointer hover:text-primary transition duration-200">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span>24/7 Emergency Response</span>
+                        </div>
+                        <div class="flex items-center text-gray-700 cursor-pointer hover:text-primary transition duration-200">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span>Licensed & Certified</span>
+                        </div>
+                        <div class="flex items-center text-gray-700 cursor-pointer hover:text-primary transition duration-200">
+                            <svg class="w-5 h-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                            <span>65+ Years Experience</span>
+                        </div>
+                    </div>
+                    <a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Check If We Service Your Area ></a>
                 </div>
                 <div class="relative">
-                    <div class="bg-gray-700 rounded-xl h-80 flex items-center justify-center">
-                        <span class="text-gray-400 text-xl">[Hero Image - Replace with IMG]</span>
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" alt="Southern California Map" class="rounded-xl shadow-lg w-full">
+                    <div class="absolute top-4 right-4 bg-white px-4 py-2 rounded-lg shadow">
+                        <span class="text-primary font-semibold">Signal Hill, CA</span>
+                        <p class="text-xs text-gray-500">Service Hub</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Emergency Service Banner -->
-    <section class="bg-primary text-white py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div>
-                    <h2 class="text-2xl font-bold">24/7 Emergency Boiler Service</h2>
-                    <p class="mt-1">Boiler failures don't wait for convenient times. That's why Porter Boiler Service offers round-the-clock emergency service. When your system goes down, every minute counts—let us help you get back up and running fast.</p>
-                </div>
-                <a href="tel:8004262264" class="mt-4 md:mt-0 bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-200 cursor-pointer text-center">Call Emergency Line (800) 426-2264</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Service Process -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-secondary mb-4">How We Serve You</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">From the moment you call us, our team moves quickly to diagnose and resolve your boiler issues. Here's what to expect when you partner with Porter Boiler Service:</p>
-            </div>
-            <div class="grid md:grid-cols-5 gap-6">
-                <div class="text-center p-6 border-2 border-gray-100 rounded-xl hover:border-primary hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">1</div>
-                    <h3 class="font-semibold text-secondary mb-2">Initial Contact</h3>
-                    <p class="text-sm text-gray-600">Call our 24/7 hotline or request a quote online</p>
-                </div>
-                <div class="text-center p-6 border-2 border-gray-100 rounded-xl hover:border-primary hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">2</div>
-                    <h3 class="font-semibold text-secondary mb-2">Diagnosis</h3>
-                    <p class="text-sm text-gray-600">Our technician arrives on-site to assess the problem</p>
-                </div>
-                <div class="text-center p-6 border-2 border-gray-100 rounded-xl hover:border-primary hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">3</div>
-                    <h3 class="font-semibold text-secondary mb-2">Solution & Quote</h3>
-                    <p class="text-sm text-gray-600">We provide transparent pricing and options</p>
-                </div>
-                <div class="text-center p-6 border-2 border-gray-100 rounded-xl hover:border-primary hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">4</div>
-                    <h3 class="font-semibold text-secondary mb-2">Service Execution</h3>
-                    <p class="text-sm text-gray-600">Quality repairs with minimal downtime</p>
-                </div>
-                <div class="text-center p-6 border-2 border-gray-100 rounded-xl hover:border-primary hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">5</div>
-                    <h3 class="font-semibold text-secondary mb-2">Follow-Up</h3>
-                    <p class="text-sm text-gray-600">We ensure your system is running optimally</p>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Request Service ></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Types of boilers We Service -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold text-secondary mb-4">All Boiler Types, One Trusted Name</h2>
-                    <p class="text-gray-600 mb-6">No matter what type of boiler system you have, our certified technicians have the expertise to service it. We specialize in:</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Commercial & Industrial boilers – Large-scale heating systems for facilities</li>
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Residential boilers – Home heating solutions</li>
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Steam boilers – For industrial and commercial applications</li>
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Hot water boilers – Radiant heating and domestic hot water</li>
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Fire-tube & Water-tube boilers – Conventional and high-efficiency systems</li>
-                    </ul>
-                    <a href="#" class="inline-block mt-6 bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Find Your Boiler Type ></a>
-                </div>
-                <div class="bg-gray-300 rounded-xl h-64 flex items-center justify-center">
-                    <span class="text-gray-500 text-xl">[Image: Boiler Types - Replace]</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Areas -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="bg-gray-300 rounded-xl h-64 flex items-center justify-center order-2 md:order-1">
-                    <span class="text-gray-500 text-xl">[Image: Map - Replace]</span>
-                </div>
-                <div class="order-1 md:order-2">
-                    <h2 class="text-3xl font-bold text-secondary mb-4">Serving All of Southern California</h2>
-                    <p class="text-gray-600 mb-6">Porter Boiler Service proudly serves commercial and residential clients throughout Southern California, including:</p>
-                    <div class="grid grid-cols-2 gap-3 mb-6">
-                        <span class="bg-red-50 text-primary px-4 py-2 rounded-lg text-center font-medium">Los Angeles County</span>
-                        <span class="bg-red-50 text-primary px-4 py-2 rounded-lg text-center font-medium">Orange County</span>
-                        <span class="bg-red-50 text-primary px-4 py-2 rounded-lg text-center font-medium">San Bernardino County</span>
-                        <span class="bg-red-50 text-primary px-4 py-2 rounded-lg text-center font-medium">Riverside County</span>
-                        <span class="bg-red-50 text-primary px-4 py-2 rounded-lg text-center font-medium col-span-2">Long Beach & Surrounding Areas</span>
-                    </div>
-                    <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Check Your Area ></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications & Licenses -->
-    <section class="py-16 bg-secondary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Licensed, Certified, Trusted</h2>
-                <p class="text-gray-300 max-w-3xl mx-auto">Your boiler system deserves the best care from qualified professionals. Porter Boiler Service holds:</p>
-            </div>
-            <div class="grid md:grid-cols-5 gap-6">
-                <div class="bg-gray-700 p-6 rounded-xl text-center hover:bg-gray-600 transition duration-200 cursor-pointer">
-                    <div class="text-4xl mb-3">📜</div>
-                    <h3 class="font-semibold">C-4 Steam/Hot Water Contractor License</h3>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-xl text-center hover:bg-gray-600 transition duration-200 cursor-pointer">
-                    <div class="text-4xl mb-3">🏗️</div>
-                    <h3 class="font-semibold">B General Contractor License</h3>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-xl text-center hover:bg-gray-600 transition duration-200 cursor-pointer">
-                    <div class="text-4xl mb-3">⚙️</div>
-                    <h3 class="font-semibold">R-Stamp Certified Welding</h3>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-xl text-center hover:bg-gray-600 transition duration-200 cursor-pointer">
-                    <div class="text-4xl mb-3">👨‍🔧</div>
-                    <h3 class="font-semibold">Certified Boiler Technicians</h3>
-                </div>
-                <div class="bg-gray-700 p-6 rounded-xl text-center hover:bg-gray-600 transition duration-200 cursor-pointer">
-                    <div class="text-4xl mb-3">✅</div>
-                    <h3 class="font-semibold">South Coast AQMD Compliance</h3>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-light transition duration-200 cursor-pointer">View Our Credentials ></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Porter Boiler Service -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-secondary mb-4">Why Choose Porter Boiler Service?</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-2">24/7 Availability</h3>
-                    <p class="text-gray-600">Boiler downtime is not an option. Give us a call 24/7 to quickly dispatch and diagnose your boiler.</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-2">Experience</h3>
-                    <p class="text-gray-600">65 years in business will teach you a lot. If it's a boiler, we have experience with it.</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-2">Rapid Response</h3>
-                    <p class="text-gray-600">With our fully equipped team, we can get to your job site as soon as possible to fix the issue.</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg transition duration-200 cursor-pointer">
-                    <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                    </div>
-                    <h3 class="text-xl font-semibold text-secondary mb-2">Quality</h3>
-                    <p class="text-gray-600">Our boiler mechanics and service technicians are trained in the best practices.</p>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="inline-block bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Get a Free Estimate ></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industries We Serve -->
+    <!-- Industries We Serve in Each Area -->
     <section class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-secondary mb-4">Solutions for Every Industry</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">Porter Boiler Service understands the unique boiler needs of different industries:</p>
+                <h2 class="text-3xl font-bold text-secondary mb-4">Commercial & Residential Boiler Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">No matter your industry or location, we provide the same high-quality service across all service areas</p>
             </div>
-            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer text-center">
-                    <div class="text-4xl mb-3">🏨</div>
-                    <h3 class="font-semibold text-secondary">Hotels & Hospitality</h3>
-                    <p class="text-sm text-gray-500 mt-2">Large-scale hot water demand</p>
+            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="group cursor-pointer">
+                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Hotels & Hospitality" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h3 class="font-semibold text-sm">Hotels & Hospitality</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer text-center">
-                    <div class="text-4xl mb-3">🏥</div>
-                    <h3 class="font-semibold text-secondary">Healthcare Facilities</h3>
-                    <p class="text-sm text-gray-500 mt-2">Sterilization and heating</p>
+                <div class="group cursor-pointer">
+                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&q=80" alt="Healthcare Facilities" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h3 class="font-semibold text-sm">Healthcare Facilities</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer text-center">
-                    <div class="text-4xl mb-3">🍽️</div>
-                    <h3 class="font-semibold text-secondary">Food Service & Restaurants</h3>
-                    <p class="text-sm text-gray-500 mt-2">Commercial kitchen needs</p>
+                <div class="group cursor-pointer">
+                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80" alt="Manufacturing Plants" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h3 class="font-semibold text-sm">Manufacturing Plants</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer text-center">
-                    <div class="text-4xl mb-3">🏭</div>
-                    <h3 class="font-semibold text-secondary">Manufacturing Plants</h3>
-                    <p class="text-sm text-gray-500 mt-2">Process steam and heating</p>
+                <div class="group cursor-pointer">
+                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80" alt="Apartment Complexes" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h3 class="font-semibold text-sm">Apartment Complexes</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer text-center">
-                    <div class="text-4xl mb-3">🏢</div>
-                    <h3 class="font-semibold text-secondary">Apartment Complexes</h3>
-                    <p class="text-sm text-gray-500 mt-2">Central heating systems</p>
+                <div class="group cursor-pointer">
+                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" alt="Food Service" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h3 class="font-semibold text-sm">Food Service</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80" alt="Commercial Buildings" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-3 left-3 text-white">
+                            <h3 class="font-semibold text-sm">Commercial Buildings</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="text-center mt-8">
@@ -300,199 +359,98 @@
         </div>
     </section>
 
-    <!-- Equipment Brands We Service -->
+    <!-- Response Time Promise -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-secondary mb-4">We Work With All Major Brands</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">Our technicians are trained to service all leading boiler manufacturers, including:</p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <span class="bg-gray-100 px-6 py-3 rounded-lg font-semibold text-gray-700">Raypak</span>
-                <span class="bg-gray-100 px-6 py-3 rounded-lg font-semibold text-gray-700">Cleaver-Brooks</span>
-                <span class="bg-gray-100 px-6 py-3 rounded-lg font-semibold text-gray-700">Miura</span>
-                <span class="bg-gray-100 px-6 py-3 rounded-lg font-semibold text-gray-700">Peerless</span>
-                <span class="bg-gray-100 px-6 py-3 rounded-lg font-semibold text-gray-700">Weil-McLain</span>
-                <span class="bg-gray-100 px-6 py-3 rounded-lg font-semibold text-gray-700">Slant/Fin</span>
-            </div>
-            <p class="text-center text-gray-500 mb-6">And many more</p>
-            <div class="text-center">
-                <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Ask About Your Brand ></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Parts & Equipment -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="Service van" class="rounded-xl shadow-lg w-full">
+                    <div class="absolute -bottom-6 -right-6 bg-primary text-white px-6 py-4 rounded-xl shadow-lg">
+                        <p class="text-2xl font-bold">2-4 Hours</p>
+                        <p class="text-sm">Average Response Time</p>
+                    </div>
+                </div>
                 <div>
-                    <h2 class="text-3xl font-bold text-secondary mb-4">Quality Parts for Lasting Repairs</h2>
-                    <p class="text-gray-600 mb-6">We use only genuine, manufacturer-approved parts and equipment for all repairs and installations. Our fully-stocked service vehicles ensure we have what we need to complete most repairs on the first visit.</p>
-                    <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Learn About Our Parts ></a>
-                </div>
-                <div class="bg-gray-300 rounded-xl h-64 flex items-center justify-center">
-                    <span class="text-gray-500 text-xl">[Image: Parts Inventory - Replace]</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Maintenance Plans -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="bg-gray-300 rounded-xl h-64 flex items-center justify-center order-2 md:order-1">
-                    <span class="text-gray-500 text-xl">[Image: Maintenance - Replace]</span>
-                </div>
-                <div class="order-1 md:order-2">
-                    <h2 class="text-3xl font-bold text-secondary mb-4">Protect Your Investment with Maintenance Plans</h2>
-                    <p class="text-gray-600 mb-6">Regular maintenance extends your boiler's lifespan and prevents costly breakdowns. Our maintenance plans include:</p>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Annual inspection & tune-up</li>
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Filter and component replacement</li>
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Efficiency testing</li>
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Priority emergency service</li>
-                        <li class="flex items-center text-gray-700"><span class="w-3 h-3 bg-primary rounded-full mr-3"></span>Detailed service reports</li>
-                    </ul>
-                    <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Get a Maintenance Quote ></a>
+                    <h2 class="text-3xl font-bold text-secondary mb-4">Fast Response Across All Service Areas</h2>
+                    <p class="text-gray-600 mb-6">Our central location in Signal Hill allows us to reach most service areas within hours. Whether you're in Los Angeles, Irvine, or Temecula, our team is ready to respond quickly to your boiler emergency.</p>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start cursor-pointer hover:text-primary transition duration-200">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold text-secondary">24/7 Emergency Service</h4>
+                                <p class="text-sm text-gray-600">We're available around the clock for emergency boiler repairs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start cursor-pointer hover:text-primary transition duration-200">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Fully Equipped Service Vans</h4>
+                                <p class="text-sm text-gray-600">Our vans are stocked with parts to handle most repairs on first visit</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start cursor-pointer hover:text-primary transition duration-200">
+                            <svg class="w-6 h-6 text-primary flex-shrink-0 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <div>
+                                <h4 class="font-semibold text-secondary">Strategically Located</h4>
+                                <p class="text-sm text-gray-600">Signal Hill base provides optimal coverage to all Southern California areas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="tel:8004262264" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Call Now (800) 426-2264</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service vs Replace Decision Guide -->
+    <!-- Why Choose Us for Your Area -->
     <section class="py-16 bg-secondary text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-4">Repair or Replace? Let Us Help You Decide</h2>
-                    <p class="text-gray-300 mb-6">Not sure if you need repairs or a new installation? Our experts can assess your system's age, condition, and efficiency to recommend the most cost-effective solution. We factor in repair costs vs. long-term energy savings.</p>
-                    <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-light transition duration-200 cursor-pointer">Get an Assessment ></a>
-                </div>
-                <div class="bg-gray-700 rounded-xl h-64 flex items-center justify-center">
-                    <span class="text-gray-400 text-xl">[Image: Old vs New Boiler - Replace]</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Frequently Asked Questions -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-secondary mb-4">Common Questions About Boiler Service</h2>
+                <h2 class="text-3xl font-bold mb-4">Local Technicians, Regional Expertise</h2>
+                <p class="text-gray-300 max-w-2xl mx-auto">When you choose Porter Boiler Service, you're getting the benefits of local knowledge with the backing of a regional industry leader</p>
             </div>
-            <div class="max-w-3xl mx-auto space-y-4">
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">How often should I service my boiler?</h3>
-                    <p class="text-gray-600 mt-2">Annual maintenance is recommended for optimal performance</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-6 bg-gray-700 rounded-xl hover:bg-gray-600 transition duration-200 cursor-pointer">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Familiar with Local Codes</h3>
+                    <p class="text-gray-400 text-sm">Our technicians understand Southern California's specific boiler regulations and permit requirements</p>
                 </div>
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">What are signs my boiler needs repair?</h3>
-                    <p class="text-gray-600 mt-2">Unusual noises, inconsistent heating, increased energy bills</p>
+                <div class="p-6 bg-gray-700 rounded-xl hover:bg-gray-600 transition duration-200 cursor-pointer">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Local Supplier Relationships</h3>
+                    <p class="text-gray-400 text-sm">Established relationships with regional parts suppliers for quick access to components</p>
                 </div>
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Do you offer maintenance plans?</h3>
-                    <p class="text-gray-600 mt-2">Yes, we offer scheduled maintenance programs</p>
+                <div class="p-6 bg-gray-700 rounded-xl hover:bg-gray-600 transition duration-200 cursor-pointer">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Quick Response Times</h3>
+                    <p class="text-gray-400 text-sm">Knowledge of local traffic patterns ensures faster arrival to your location</p>
                 </div>
-                <div class="border border-gray-200 rounded-lg p-4 hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">How quickly can you respond to emergencies?</h3>
-                    <p class="text-gray-600 mt-2">We dispatch within hours, 24/7</p>
+                <div class="p-6 bg-gray-700 rounded-xl hover:bg-gray-600 transition duration-200 cursor-pointer">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Climate Expertise</h3>
+                    <p class="text-gray-400 text-sm">Understanding of Southern California's unique heating needs based on local climate</p>
                 </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Ask a Question ></a>
             </div>
         </div>
     </section>
 
-    <!-- Customer Reviews / Testimonials -->
-    <section class="py-16 bg-gray-50">
+    <!-- Contact CTA -->
+    <section id="contact" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-secondary mb-4">What Our Clients Say</h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-3">"George is the best!!! Great and fast service. He arranged and fixed our water heater and heating problem. Highly recommend Porter Boiler Service."</p>
-                    <p class="text-sm text-gray-500 font-medium">- Hotel Support</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-3">"Great service for any Boiler need. Call for an honest assessment of your situation."</p>
-                    <p class="text-sm text-gray-500 font-medium">- jochumr</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-3">"Porter Boiler Installed 5 Raypak water boilers at two of my high rise towers in the Wilshire District and did a tremendous job. From George to Redha and Moe and their entire team were very instrumental in switching my towers from steam boilers to water boilers. They went on and beyond their scope of work to get my new boilers on line up and running. I highly recommend Porter Boiler for new installs and Maintenance service."</p>
-                    <p class="text-sm text-gray-500 font-medium">- Joe Munoz</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-3">"I highly recommend Porter Boiler Service for your boiler needs. Mohan Singhal Helped me tremendously when I need to replace my broken down obsolete boilers. From start to finish the customer service was excellent. the installers were professional and great to work with. The help and recommendations on what we needed and what would make our plant more efficient was outstanding. Even the training afterwards was a tremendous help."</p>
-                    <p class="text-sm text-gray-500 font-medium">- david pantoja</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-3">"Porter Boiler is comprised of professional, efficient, and innovative management and labor. They hold their work to very high standard of quality and are just easy to work with. We will absolutely be using them again."</p>
-                    <p class="text-sm text-gray-500 font-medium">- John Wiley</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-3">"Installed our new boiler. Professional and on time... Highly recommend Porter Boiler Service."</p>
-                    <p class="text-sm text-gray-500 font-medium">- Sam Serour</p>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Write a Review ></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sidebar / Contact Block -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-2xl mx-auto bg-gradient-to-r from-primary to-primary-dark rounded-xl p-8 text-white text-center">
-                <h2 class="text-2xl font-bold mb-4">Boiler Service in California</h2>
-                <p class="text-lg mb-6">Call us for a FREE estimate on replacements and new installations</p>
-                <p class="text-3xl font-bold mb-6">(800) 426-2264</p>
-                <a href="#" class="inline-block bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-200 cursor-pointer">Request a Quote ></a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Image Gallery -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-secondary mb-4">Our Work</h2>
-            </div>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="bg-gray-300 rounded-xl h-48 flex items-center justify-center">
-                    <span class="text-gray-500">[IMG_2684-copy-1]</span>
-                </div>
-                <div class="bg-gray-300 rounded-xl h-48 flex items-center justify-center">
-                    <span class="text-gray-500">[IMG_2722-copy-1]</span>
-                </div>
-                <div class="bg-gray-300 rounded-xl h-48 flex items-center justify-center">
-                    <span class="text-gray-500">[IMG_3826-copy-1]</span>
-                </div>
-                <div class="bg-gray-300 rounded-xl h-48 flex items-center justify-center">
-                    <span class="text-gray-500">[IMG_6363-copy]</span>
+            <div class="max-w-3xl mx-auto bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-10 text-white text-center">
+                <h2 class="text-3xl font-bold mb-4">Ready to Serve Your Area?</h2>
+                <p class="text-lg mb-8">Whether you're in one of our listed cities or nearby, we're ready to help with all your boiler needs</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#" class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-200 cursor-pointer">Request Service in Your City ></a>
+                    <a href="tel:8004262264" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition duration-200 cursor-pointer">Call (800) 426-2264</a>
                 </div>
             </div>
         </div>
@@ -505,16 +463,16 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4">Contact Us</h3>
                     <ul class="space-y-2">
-                        <li class="flex items-center"><span class="mr-2">📞</span> (800) 426-2264</li>
-                        <li class="flex items-center"><span class="mr-2">✉️</span> info@porterboiler.com</li>
-                        <li><a href="#" class="text-primary hover:underline">Request a Service</a></li>
+                        <li class="flex items-center cursor-pointer hover:text-primary transition duration-200"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> (800) 426-2264</li>
+                        <li class="flex items-center cursor-pointer hover:text-primary transition duration-200"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> info@porterboiler.com</li>
+                        <li><a href="#" class="text-primary hover:underline cursor-pointer">Request a Service</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold mb-4">Porter Boiler Service</h3>
                     <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-primary">Boiler Equipment</a></li>
-                        <li>📍 1166 E. 23rd St Signal Hill, CA. 90755</li>
+                        <li><a href="#" class="hover:text-primary cursor-pointer">Boiler Equipment</a></li>
+                        <li class="flex items-center cursor-pointer hover:text-primary transition duration-200"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> 1166 E. 23rd St Signal Hill, CA. 90755</li>
                     </ul>
                 </div>
                 <div class="text-center md:text-right">
@@ -529,41 +487,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Pop-up Form Modal (Hidden by default) -->
-    <div id="requestModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
-        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-bold text-secondary">Request a Service</h2>
-                <button onclick="document.getElementById('requestModal').classList.add('hidden')" class="text-gray-500 hover:text-gray-700 cursor-pointer">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
-            <form class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
-                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
-                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
-                    <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-                    <input type="tel" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                    <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Submit</button>
-            </form>
-        </div>
-    </div>
 
 </body>
 </html>
