@@ -3,381 +3,1356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boiler Service in Los Angeles - Porter Boiler Service</title>
-    <meta name="description" content="Porter Boiler Service provides expert boiler repair, installation, and maintenance in Los Angeles. 24/7 emergency service available. Call (800) 426-2264">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#DC2626',
-                        'primary-dark': '#B91C1C',
-                        'primary-light': '#EF4444',
-                        secondary: '#1F2937',
-                        accent: '#991B1B',
-                    },
-                    fontFamily: {
-                        heading: ['Poppins', 'sans-serif'],
-                        body: ['Open Sans', 'sans-serif'],
-                    }
-                }
+    <title>Area We Serve - Metro Cleaning LLC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --background: #FFFDF5;
+            --foreground: #1E293B;
+            --muted: #F1F5F9;
+            --mutedForeground: #64748B;
+            --accent: #DC2626;
+            --accentForeground: #FFFFFF;
+            --secondary: #F472B6;
+            --tertiary: #FBBF24;
+            --quaternary: #34D399;
+            --border: #E2E8F0;
+            --card: #FFFFFF;
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: var(--radius-full);
+            border: 2px solid var(--foreground);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--accentForeground);
+            border-color: var(--foreground);
+            box-shadow: 4px 4px 0px var(--foreground);
+        }
+
+        .btn-primary:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--foreground);
+        }
+
+        .btn-primary:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px var(--foreground);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--foreground);
+            border-color: var(--foreground);
+        }
+
+        .btn-secondary:hover {
+            background: var(--tertiary);
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--foreground);
+        }
+
+        .btn-icon {
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card);
+            border: 2px solid var(--foreground);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card:hover {
+            transform: rotate(-1deg) scale(1.02);
+        }
+
+        .card-sticker {
+            box-shadow: 8px 8px 0px var(--muted);
+        }
+
+        .card-sticker:hover {
+            box-shadow: 8px 8px 0px var(--accent);
+        }
+
+        /* Section styling */
+        section {
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--mutedForeground);
+            margin-bottom: 48px;
+        }
+
+        /* Decorative shapes */
+        .shape-circle {
+            border-radius: 50%;
+        }
+
+        .shape-blob {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        .decoration {
+            position: absolute;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .decoration-circle {
+            width: 300px;
+            height: 300px;
+            background: var(--tertiary);
+            opacity: 0.3;
+        }
+
+        .decoration-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--mutedForeground);
+            border-radius: 50%;
+        }
+
+        /* Animations */
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+
+        .animate-pop {
+            animation: popIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .animate-wiggle:hover {
+            animation: wiggle 0.5s ease-in-out;
+        }
+
+        /* === HERO SECTION === */
+        .hero {
+            padding: 120px 0 96px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: var(--tertiary);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 24px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--mutedForeground);
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        .hero-tagline {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 24px;
+        }
+
+        /* === LOCATIONS GRID === */
+        .locations {
+            background: var(--muted);
+        }
+
+        .locations-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+            align-items: start;
+        }
+
+        .locations-list-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .location-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .location-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--muted);
+            border: 2px solid var(--foreground);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .location-item:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--foreground);
+            background: var(--accent);
+        }
+
+        .location-item:hover .location-item-icon {
+            background: white;
+            color: var(--accent);
+        }
+
+        .location-item-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--accent);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .location-item-icon svg {
+            width: 18px;
+            height: 18px;
+            color: white;
+        }
+
+        .location-item-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .location-item:hover .location-item-name {
+            color: white;
+        }
+
+        .map-wrapper {
+            position: sticky;
+            top: 24px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            background: var(--card);
+            border: 2px solid var(--foreground);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .map-placeholder-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-placeholder-icon svg {
+            width: 40px;
+            height: 40px;
+            color: white;
+        }
+
+        .map-placeholder-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--mutedForeground);
+        }
+
+        @media (max-width: 1024px) {
+            .locations-content {
+                grid-template-columns: 1fr;
+            }
+
+            .map-wrapper {
+                position: static;
+            }
+
+            .map-placeholder {
+                min-height: 300px;
             }
         }
-    </script>
-    <style>
-        body { font-family: 'Open Sans', sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
-        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+        @media (max-width: 768px) {
+            .locations-list-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .location-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .location-desc {
+            font-size: 13px;
+            color: var(--mutedForeground);
+            margin-bottom: 8px;
+        }
+
+        /* === SERVICES GRID === */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .service-card {
+            background: var(--card);
+            border: 2px solid var(--foreground);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .service-card:hover {
+            transform: translate(-2px, -2px) rotate(-1deg);
+            box-shadow: 6px 6px 0px var(--foreground);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            background: var(--accent);
+            border: 2px solid var(--foreground);
+            box-shadow: 3px 3px 0px var(--foreground);
+        }
+
+        .service-icon svg {
+            width: 28px;
+            height: 28px;
+            color: white;
+        }
+
+        .service-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .service-desc {
+            font-size: 14px;
+            color: var(--mutedForeground);
+        }
+
+        /* === WHY CHOOSE US === */
+        .why-choose {
+            background: var(--foreground);
+            color: white;
+        }
+
+        .why-choose .section-title,
+        .why-choose .section-subtitle {
+            color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid white;
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .benefit-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translate(-4px, -4px);
+            box-shadow: 6px 6px 0px var(--tertiary);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            border: 2px solid var(--foreground);
+            box-shadow: 3px 3px 0px var(--foreground);
+        }
+
+        .benefit-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+
+        .benefit-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .benefit-desc {
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        /* === MAP SECTION === */
+        .map-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-section::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: var(--accent);
+            border-radius: 50%;
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .map-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .map-info {
+            max-width: 500px;
+        }
+
+        .distance-list {
+            margin-top: 24px;
+        }
+
+        .distance-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .distance-badge {
+            background: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: 13px;
+            font-weight: 700;
+            border: 2px solid var(--foreground);
+            box-shadow: 2px 2px 0px var(--foreground);
+            min-width: 110px;
+            text-align: center;
+        }
+
+        .map-placeholder {
+            background: var(--muted);
+            border: 2px dashed var(--foreground);
+            border-radius: var(--radius-lg);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            color: var(--mutedForeground);
+        }
+
+        .phone-cta {
+            margin-top: 24px;
+            font-weight: 600;
+        }
+
+        /* === TESTIMONIALS === */
+        .testimonials {
+            background: var(--muted);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .testimonial-card {
+            background: var(--card);
+            border: 2px solid var(--foreground);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .testimonial-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--accent);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-rating {
+            color: var(--tertiary);
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-location {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            font-style: italic;
+            color: var(--mutedForeground);
+            margin-bottom: 12px;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* === FAQ === */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .faq-item {
+            background: var(--card);
+            border: 2px solid var(--foreground);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            background: var(--background);
+            padding: 20px 24px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--tertiary);
+        }
+
+        .faq-toggle {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.open {
+            padding: 16px 24px;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            font-size: 14px;
+            color: var(--mutedForeground);
+        }
+
+        /* === CONTACT === */
+        .contact-section {
+            background: var(--foreground);
+            color: white;
+        }
+
+        .contact-section .section-title,
+        .contact-section .section-subtitle {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid white;
+            border-radius: var(--radius-md);
+            padding: 32px 24px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .contact-card:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translate(-4px, -4px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 24px;
+        }
+
+        .contact-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .contact-value {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 16px;
+        }
+
+        .contact-cta {
+            display: inline-block;
+            color: var(--accent);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .contact-cta:hover {
+            text-decoration: underline;
+        }
+
+        .contact-hours {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+        }
+
+        .contact-hours p {
+            margin: 4px 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .emergency-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 8px 16px;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 16px;
+            border: 2px solid var(--foreground);
+            box-shadow: 3px 3px 0px var(--foreground);
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--foreground);
+            color: white;
+            padding: 48px 0;
+            text-align: center;
+        }
+
+        .footer-tagline {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 24px;
+            color: var(--tertiary);
+        }
+
+        .footer-contact {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .locations-grid,
+            .services-grid,
+            .testimonials-grid,
+            .faq-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .map-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+
+            .locations-grid,
+            .services-grid,
+            .benefits-grid,
+            .testimonials-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center">
-                    <a href="#" class="text-2xl font-bold text-primary">Porter Boiler Service</a>
-                </div>
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">Home</a>
-                    <div class="relative group">
-                        <button class="text-gray-700 hover:text-primary font-medium py-2 cursor-pointer">BOILER SERVICES</button>
-                        <div class="absolute left-0 mt-0 w-56 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Boiler Service</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Boiler Maintenance & Repair</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Boiler Installation</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Combustion Emissions & Burners</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Refractory Insulation</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">R-Stamp Certified Welding</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-red-50 hover:text-primary cursor-pointer">Boiler Venting & Exhaust</a>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate-pop">
+                <h1>Professional Cleaning Services Across the DMV</h1>
+                <p>Metro Cleaning LLC has been proudly serving the greater Washington, DC metropolitan area since 2010. With our centrally located operations, we deliver premium deep cleaning services to 12 key locations across the DMV.</p>
+                <p>Whether you need residential carpet cleaning, commercial janitorial services, or emergency stain removal — our professional team is ready to serve you in your neighborhood.</p>
+                <a href="#contact" class="btn btn-primary">
+                    GET A FREE ESTIMATE
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <p class="hero-tagline">Quality Cleaning You Can Trust, Right Around the Corner.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATIONS WE SERVE -->
+    <section class="locations">
+        <div class="container">
+            <h2 class="section-title">Find Metro Cleaning in Your Area</h2>
+            <p class="section-subtitle">Explore our service areas below. Click on any location to learn more about the cleaning services available in your neighborhood.</p>
+            
+            <div class="locations-content">
+                <div class="locations-list-wrapper">
+                    <div class="location-list">
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Frederick</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Howard</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Loudoun</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Montgomery</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">District of Columbia</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Arlington</span>
                         </div>
                     </div>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">BOILER MAINTENANCE & REPAIR</a>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">BOILER EQUIPMENT</a>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">PROCESS PIPING</a>
-                    <a href="#" class="text-gray-700 hover:text-primary font-medium cursor-pointer">Contact Us</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <span class="text-primary font-semibold">(800) 426-2264</span>
-                    <a href="#contact" class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary-dark transition duration-200 cursor-pointer">GET A QUOTE</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative h-[500px] flex items-center">
-        <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?w=1920&q=80" alt="Los Angeles Skyline" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-secondary/90 to-secondary/60"></div>
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
-                <p class="text-primary-light font-semibold mb-2">Porter Boiler Service - Los Angeles</p>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Boiler Service in Los Angeles</h1>
-                <p class="text-lg text-gray-200 mb-8">Porter Boiler Service has been providing expert boiler repair, installation, and maintenance services to Los Angeles for over 65 years. Our certified technicians are available 24/7 for emergency boiler repairs across the LA area.</p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-primary-light transition duration-200 cursor-pointer text-center">Request Service ></a>
-                    <a href="tel:8004262264" class="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white/10 transition duration-200 cursor-pointer text-center">Call (800) 426-2264</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Emergency Banner -->
-    <section class="bg-primary text-white py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <p class="font-semibold">24/7 Emergency Boiler Service Available in Los Angeles</p>
-                <a href="tel:8004262264" class="mt-2 md:mt-0 font-bold hover:underline cursor-pointer">Call Now: (800) 426-2264</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Overview -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Boiler Services in Los Angeles</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto">We provide comprehensive boiler solutions for commercial and residential properties throughout Los Angeles County.</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    </div>
-                    <h3 class="font-semibold text-secondary mb-2">Boiler Repair</h3>
-                    <p class="text-gray-600 text-sm">Fast, reliable repairs for all boiler types. Our technicians diagnose and fix issues quickly.</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="font-semibold text-secondary mb-2">Boiler Installation</h3>
-                    <p class="text-gray-600 text-sm">Professional installation of new boilers. We help you choose the right system for your needs.</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                    </div>
-                    <h3 class="font-semibold text-secondary mb-2">Boiler Maintenance</h3>
-                    <p class="text-gray-600 text-sm">Scheduled maintenance to keep your boiler running efficiently and prevent breakdowns.</p>
-                </div>
-                <div class="p-6 bg-gray-50 rounded-xl hover:shadow-lg hover:border-2 hover:border-primary transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="font-semibold text-secondary mb-2">24/7 Emergency</h3>
-                    <p class="text-gray-600 text-sm">Round-the-clock emergency service. We're here when you need us most in LA.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Areas in LA -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Areas We Serve in Los Angeles</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">We provide boiler services throughout the Greater Los Angeles area</p>
-            </div>
-            <div class="grid md:grid-cols-4 gap-4">
-                <div class="bg-white p-4 rounded-lg text-center hover:shadow-md hover:border hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Downtown LA</h3>
-                </div>
-                <div class="bg-white p-4 rounded-lg text-center hover:shadow-md hover:border hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Hollywood</h3>
-                </div>
-                <div class="bg-white p-4 rounded-lg text-center hover:shadow-md hover:border hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Beverly Hills</h3>
-                </div>
-                <div class="bg-white p-4 rounded-lg text-center hover:shadow-md hover:border hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Santa Monica</h3>
-                </div>
-                <div class="bg-white p-4 rounded-lg text-center hover:shadow-md hover:border hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Long Beach</h3>
-                </div>
-                <div class="bg-white p-4 rounded-lg text-center hover:shadow-md hover:border hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Pasadena</h3>
-                </div>
-                <div class="bg-white p-4 rounded-lg text-center hover:shadow-md hover:border hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Glendale</h3>
-                </div>
-                <div class="bg-white p-4 rounded-lg text-center hover:shadow-md hover:border hover:border-primary transition duration-200 cursor-pointer">
-                    <h3 class="font-semibold text-secondary">Burbank</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Industries We Serve -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Industries We Serve in Los Angeles</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">We provide specialized boiler services for various industries across LA</p>
-            </div>
-            <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-6">
-                <div class="group cursor-pointer">
-                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80" alt="Hotels & Hospitality" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white">
-                            <h3 class="font-semibold text-sm">Hotels & Hospitality</h3>
+                    <div class="location-list">
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Fairfax</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Columbia</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Alexandria</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Prince George's</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Prince William</span>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+                            <span class="location-item-name">Charles</span>
                         </div>
                     </div>
                 </div>
-                <div class="group cursor-pointer">
-                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
-                        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&q=80" alt="Healthcare Facilities" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white">
-                            <h3 class="font-semibold text-sm">Healthcare</h3>
+
+                <div class="map-wrapper">
+                    <div class="map-placeholder">
+                        <div class="map-placeholder-icon">
+                            <i data-lucide="map"></i>
                         </div>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80" alt="Manufacturing" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white">
-                            <h3 class="font-semibold text-sm">Manufacturing</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
-                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&q=80" alt="Apartments" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white">
-                            <h3 class="font-semibold text-sm">Apartments</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
-                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&q=80" alt="Food Service" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white">
-                            <h3 class="font-semibold text-sm">Food Service</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="relative h-40 rounded-xl overflow-hidden mb-3">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&q=80" alt="Commercial" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        <div class="absolute bottom-3 left-3 text-white">
-                            <h3 class="font-semibold text-sm">Commercial</h3>
-                        </div>
+                        <span class="map-placeholder-text">[Map Graphic: DMV Area]</span>
+                        <span style="font-size: 14px; color: var(--mutedForeground);">Interactive map will be displayed here</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us (Local) -->
-    <section class="py-16 bg-secondary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Porter Boiler Service in Los Angeles</h2>
-                <p class="text-gray-300 max-w-2xl mx-auto">Local expertise with the backing of 65+ years of industry experience</p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="p-6 bg-gray-700/50 rounded-xl hover:bg-gray-700 transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Fast Local Response</h3>
-                    <p class="text-gray-400 text-sm">Our LA-based technicians can reach your location quickly, minimizing downtime.</p>
+    <!-- OUR SERVICES -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Comprehensive Cleaning Solutions</h2>
+            <p class="section-subtitle">No matter where you are in the DMV, Metro Cleaning LLC delivers the same high-quality services.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="scan-line"></i></div>
+                    <div class="service-title">Carpet Cleaning</div>
+                    <div class="service-desc">Deep steam extraction, stain removal</div>
                 </div>
-                <div class="p-6 bg-gray-700/50 rounded-xl hover:bg-gray-700 transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">LA City Codes</h3>
-                    <p class="text-gray-400 text-sm">Familiar with Los Angeles building codes, permits, and inspection requirements.</p>
+
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="grid-3x3"></i></div>
+                    <div class="service-title">Rug Cleaning</div>
+                    <div class="service-desc">Oriental & area rugs, delicate fiber care</div>
                 </div>
-                <div class="p-6 bg-gray-700/50 rounded-xl hover:bg-gray-700 transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">65+ Years Experience</h3>
-                    <p class="text-gray-400 text-sm">Decades of boiler expertise serving the Los Angeles metropolitan area.</p>
+
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="armchair"></i></div>
+                    <div class="service-title">Upholstery Cleaning</div>
+                    <div class="service-desc">Furniture cleaning, pet-friendly solutions</div>
                 </div>
-                <div class="p-6 bg-gray-700/50 rounded-xl hover:bg-gray-700 transition duration-200 cursor-pointer">
-                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    </div>
-                    <h3 class="text-lg font-semibold mb-2">Licensed & Certified</h3>
-                    <p class="text-gray-400 text-sm">Fully licensed with C-4 Steam/Hot Water and B General Contractor certifications.</p>
+
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="layout-grid"></i></div>
+                    <div class="service-title">Hard Floor Cleaning</div>
+                    <div class="service-desc">Wood, tile, laminate, strip & refinishing</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="layers"></i></div>
+                    <div class="service-title">Tile & Grout</div>
+                    <div class="service-desc">Deep scrubbing & sealing, grout restoration</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="siren"></i></div>
+                    <div class="service-title">24/7 Emergency</div>
+                    <div class="service-desc">Same-day response, water damage cleanup</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="building-2"></i></div>
+                    <div class="service-title">Commercial Cleaning</div>
+                    <div class="service-desc">Office buildings, property management</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="home"></i></div>
+                    <div class="service-title">Residential Cleaning</div>
+                    <div class="service-desc">Move-in/move-out, post-construction</div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="shield-check"></i></div>
+                    <div class="service-title">Fabric Protection</div>
+                    <div class="service-desc">Stain guard treatment, odor neutralization</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">What Our Los Angeles Clients Say</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Trusted by businesses and homeowners throughout Los Angeles</p>
+    <!-- WHY CHOOSE US -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Your Trusted Local Cleaning Partner</h2>
+            <p class="section-subtitle">When you choose Metro Cleaning LLC, you're choosing a team that understands the unique needs of DMV homeowners and businesses.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="siren"></i></div>
+                    <div class="benefit-title">24/7 Emergency Availability</div>
+                    <div class="benefit-desc">We understand that messes don't wait for business hours. Our emergency team is available around the clock for urgent carpet, upholstery, and floor cleaning needs.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="map-pin"></i></div>
+                    <div class="benefit-title">Local Technicians</div>
+                    <div class="benefit-desc">Our technicians live and work in the communities we serve. They know the area, understand local building types, and can respond quickly to your location.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="shield-check"></i></div>
+                    <div class="benefit-title">Fully Insured & Certified</div>
+                    <div class="benefit-desc">Every cleaning professional is IICRC certified and fully insured. We treat your property with the utmost care and professionalism.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="leaf"></i></div>
+                    <div class="benefit-title">Eco-Friendly Solutions</div>
+                    <div class="benefit-desc">We use non-toxic, biodegradable cleaning products that are safe for your family, pets, and the environment — while still delivering powerful results.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="dollar-sign"></i></div>
+                    <div class="benefit-title">Competitive Pricing</div>
+                    <div class="benefit-desc">Quality cleaning shouldn't break the bank. We offer transparent pricing with free estimates and competitive rates across all locations.</div>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i data-lucide="award"></i></div>
+                    <div class="benefit-title">Satisfaction Guarantee</div>
+                    <div class="benefit-desc">Your satisfaction is our priority. If you're not happy with the results, we'll make it right — guaranteed.</div>
+                </div>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-4">"George is the best!!! Great and fast service. He arranged and fixed our water heater and heating problem. Highly recommend Porter Boiler Service for any boiler needs in LA."</p>
-                    <p class="text-sm text-gray-500 font-medium">- Hotel Support, Los Angeles</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-4">"Porter Boiler Installed 5 Raypak water boilers at two of my high rise towers in the Wilshire District. They went above and beyond to get my new boilers up and running."</p>
-                    <p class="text-sm text-gray-500 font-medium">- Joe Munoz, Property Manager</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
-                    <div class="flex items-center mb-3">
-                        <div class="text-yellow-400">★★★★★</div>
-                    </div>
-                    <p class="text-gray-600 mb-4">"I highly recommend Porter Boiler Service for your boiler needs. From start to finish the customer service was excellent. The installers were professional and great to work with."</p>
-                    <p class="text-sm text-gray-500 font-medium">- david pantoja, Los Angeles</p>
-                </div>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="inline-block bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-200 cursor-pointer">Write a Review ></a>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#contact" class="btn btn-primary">
+                    BOOK NOW
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact CTA -->
-    <section id="contact" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto bg-gradient-to-r from-primary to-primary-dark rounded-2xl p-10 text-white text-center">
-                <h2 class="text-3xl font-bold mb-4">Boiler Service in Los Angeles</h2>
-                <p class="text-lg mb-6">Call us for a FREE estimate on boiler repairs, installations, and maintenance in Los Angeles</p>
-                <p class="text-3xl font-bold mb-6">(800) 426-2264</p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#" class="bg-white text-primary px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition duration-200 cursor-pointer">Request a Quote ></a>
-                    <a href="tel:8004262264" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition duration-200 cursor-pointer">Call Now</a>
+    <!-- MAP SECTION -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Coverage Across the DMV</h2>
+            <p class="section-subtitle">Metro Cleaning LLC proudly serves clients within a 40-mile radius of Washington, DC.</p>
+            
+            <div class="map-content">
+                <div class="map-info">
+                    <p>Our central location allows us to provide fast response times to all 9 service areas:</p>
+                    
+                    <div class="distance-list">
+                        <div class="distance-item">
+                            <span class="distance-badge">0-15 miles</span>
+                            <span>Washington, DC | Arlington | Alexandria | Bethesda</span>
+                        </div>
+                        <div class="distance-item">
+                            <span class="distance-badge">15-25 miles</span>
+                            <span>Fairfax | Montgomery County | Prince George's County | Rockville</span>
+                        </div>
+                        <div class="distance-item">
+                            <span class="distance-badge">25-40 miles</span>
+                            <span>Loudoun County</span>
+                        </div>
+                    </div>
+
+                    <p class="phone-cta">Questions about your specific location?<br>Call us at <strong>+1(202)600-6060</strong> to confirm we service your address.</p>
+                </div>
+
+                <div class="map-placeholder">
+                    [Map Graphic: DMV Region with 40-Mile Radius Circle]
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Areas We Cover -->
-    <section class="py-16 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl font-bold text-secondary mb-4">We Also Serve Surrounding Areas</h2>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Trusted by Thousands Across the DMV</h2>
+            <p class="section-subtitle">Don't just take our word for it — here's what our customers in each area have to say:</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"Metro Cleaning has been our go-to for years. Their team is professional, punctual, and our carpets have never looked better. Highly recommend!"</p>
+                    <p class="testimonial-author">— Marcus T., Capitol Hill</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"Fast, efficient, and affordable. They cleaned our entire office after a renovation and the results were incredible. Will definitely use again."</p>
+                    <p class="testimonial-author">— Sarah L., Arlington</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"Great communication and fantastic results. They handled my Oriental rug with such care. Very impressed with the attention to detail."</p>
+                    <p class="testimonial-author">— James P., Old Town</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"Emergency call on a Saturday — they were at my door within 2 hours. Saved my carpets from a water leak. Amazing service!"</p>
+                    <p class="testimonial-author">— Jennifer R., Fairfax</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"We've used them for our rental properties in Ashburn. Consistent quality, reliable scheduling, and fair pricing. Couldn't ask for a better partner."</p>
+                    <p class="testimonial-author">— David M., Ashburn</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"Their team transformed our basement carpet after flooding. Professional, thorough, and they even helped with the insurance paperwork. Highly recommend!"</p>
+                    <p class="testimonial-author">— Amanda K., Bethesda</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"Excellent residential cleaning service. They deep cleaned our carpets and upholstery. My allergies have improved so much since using their services!"</p>
+                    <p class="testimonial-author">— Robert C., Rockville</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <span class="testimonial-rating">★★★★★</span>
+                    </div>
+                    <p class="testimonial-text">"Reliable and trustworthy. We've been using Metro Cleaning for our property management company for over 3 years. Never a complaint from tenants."</p>
+                    <p class="testimonial-author">— Linda W., Property Manager</p>
+                </div>
             </div>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="bg-white px-4 py-2 rounded-lg text-gray-700 cursor-pointer hover:text-primary transition duration-200">Santa Monica</span>
-                <span class="bg-white px-4 py-2 rounded-lg text-gray-700 cursor-pointer hover:text-primary transition duration-200">Beverly Hills</span>
-                <span class="bg-white px-4 py-2 rounded-lg text-gray-700 cursor-pointer hover:text-primary transition duration-200">Hollywood</span>
-                <span class="bg-white px-4 py-2 rounded-lg text-gray-700 cursor-pointer hover:text-primary transition duration-200">Pasadena</span>
-                <span class="bg-white px-4 py-2 rounded-lg text-gray-700 cursor-pointer hover:text-primary transition duration-200">Long Beach</span>
-                <span class="bg-white px-4 py-2 rounded-lg text-gray-700 cursor-pointer hover:text-primary transition duration-200">Glendale</span>
-                <span class="bg-white px-4 py-2 rounded-lg text-gray-700 cursor-pointer hover:text-primary transition duration-200">Burbank</span>
-                <span class="bg-white px-4 py-2 rounded-lg text-gray-700 cursor-pointer hover:text-primary transition duration-200">West Hollywood</span>
-            </div>
-            <div class="text-center mt-8">
-                <a href="#" class="text-primary font-semibold hover:underline cursor-pointer">View All Service Areas ></a>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#" class="btn btn-primary">
+                    WRITE US A REVIEW
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-secondary text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-center cursor-pointer hover:text-primary transition duration-200"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg> (800) 426-2264</li>
-                        <li class="flex items-center cursor-pointer hover:text-primary transition duration-200"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg> info@porterboiler.com</li>
-                        <li><a href="#" class="text-primary hover:underline cursor-pointer">Request a Service</a></li>
-                    </ul>
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Common questions about our service areas</p>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Q: Do you actually come to my location?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A: Yes! We serve all 9 locations listed on this page. Our centrally positioned team can reach most areas within 30 minutes.</p>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Porter Boiler Service</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-primary cursor-pointer">Boiler Equipment</a></li>
-                        <li class="flex items-center cursor-pointer hover:text-primary transition duration-200"><svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg> 1166 E. 23rd St Signal Hill, CA. 90755</li>
-                    </ul>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Q: How soon can you schedule an appointment?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A: We offer flexible scheduling, including same-day and next-day appointments. For non-emergency services, we typically can book within 24-48 hours.</p>
+                    </div>
                 </div>
-                <div class="text-center md:text-right">
-                    <p class="text-gray-400 text-sm">Copyright © 2024 Porter Boiler Service. All Rights Reserved.</p>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Q: Are your services available on weekends?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A: Absolutely. Our standard hours are Mon-Fri: 8AM-8PM, Sat&Sun: 10AM-6PM. Plus, we offer 24/7 emergency availability.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Q: Do you require a minimum service size?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A: No minimums. We service everything from single room carpet cleanings to full commercial building maintenance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Q: Do you offer free estimates?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A: Yes, all estimates are free and non-obligation. Contact us for a personalized quote.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Q: Are your cleaning solutions safe for children and pets?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A: Yes. We use non-toxic, biodegradable products that are safe for your family and pets.</p>
+                    </div>
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 48px;">
+                <a href="#contact" class="btn btn-secondary">
+                    ASK A QUESTION
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Metro Cleaning LLC Today</h2>
+            <p class="section-subtitle">Get a free estimate and discover why thousands of DMV residents trust Metro Cleaning for their cleaning needs.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon"><i data-lucide="phone"></i></div>
+                    <div class="contact-title">Call Us</div>
+                    <div class="contact-value">+1(202)600-6060</div>
+                    <a href="tel:+12026006060" class="contact-cta">CALL NOW →</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><i data-lucide="mail"></i></div>
+                    <div class="contact-title">Email Us</div>
+                    <div class="contact-value">info@metrocleaningcorp.com</div>
+                    <a href="mailto:info@metrocleaningcorp.com" class="contact-cta">SEND EMAIL →</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon"><i data-lucide="calendar-days"></i></div>
+                    <div class="contact-title">Book Online</div>
+                    <div class="contact-value">Schedule Your Service</div>
+                    <a href="#" class="contact-cta">BOOK NOW →</a>
+                </div>
+            </div>
+
+            <div class="contact-hours">
+                <p><strong>Office Hours:</strong></p>
+                <p>Monday - Friday: 8AM - 8PM</p>
+                <p>Saturday - Sunday: 10AM - 6PM</p>
+                <span class="emergency-badge">24/7 Emergency Available</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p class="footer-tagline">Elevating standard of cleanliness in the DMV since 2010. Dedicated to quality, integrity, and your health.</p>
+            <p class="footer-contact">+1(202)600-6060</p>
+            <p class="footer-contact">info@metrocleaningcorp.com</p>
+            <p class="footer-copyright">© 2024 Metro Cleaning LLC. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // FAQ Toggle Function
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const toggle = element.querySelector('.faq-toggle');
+            
+            // Close other open FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('open');
+                }
+            });
+            document.querySelectorAll('.faq-toggle').forEach(item => {
+                if (item !== toggle) {
+                    item.textContent = '+';
+                }
+            });
+
+            // Toggle current FAQ
+            answer.classList.toggle('open');
+            toggle.textContent = answer.classList.contains('open') ? '−' : '+';
+        }
+
+        // Add entrance animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-pop');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.location-card, .service-card, .benefit-card, .testimonial-card, .faq-item, .contact-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>
